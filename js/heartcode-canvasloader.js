@@ -61,9 +61,10 @@
 	* @return {Object} The DOM element
 	*/
 		addEl = function (tag, par, opt) {
-			var el = document.createElement(tag), n;
-			for (n in opt) { el[n] = opt[n]; }
-			if(typeof(par) !== "undefined") {
+		  var el = document.createElement(tag), n;
+		  for (n in opt) { el[n] = opt[n]; }
+		  
+                  if(typeof(par) !== "undefined" && par !== null) {
 				par.appendChild(el);
 			}
 			return el;
