@@ -629,10 +629,14 @@
 		var c = this.cont;
 		if (typeof (this.timer) === "number") { this.hide(); }
 		if (engine === engines[0]) {
-			c.removeChild(this.can);
-			c.removeChild(this.cCan);
+                  if (c !== undefined && c.removeChild !== undefined) {
+		    c.removeChild(this.can);
+		    c.removeChild(this.cCan);
+                  }
 		} else {
-			c.removeChild(this.vml);
+                  if (c !== undefined && c.removeChild !== undefined) {
+		    c.removeChild(this.vml);
+                  }
 		}
 		var n;
 		for (n in this) { delete this[n]; }
